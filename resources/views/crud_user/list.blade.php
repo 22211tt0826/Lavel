@@ -16,6 +16,8 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Facebook</th>
                                     <th>Email</th>
                                     <th class="text-center">Action</th>
                                 </tr>
@@ -25,6 +27,8 @@
                                 <tr>
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
+                                    <td>{{ $user->Age }}</td>
+                                    <td>{{ $user->facebook }}</td>
                                     <td>{{ $user->email }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('user.readUser', ['id' => $user->id]) }}"

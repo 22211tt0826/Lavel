@@ -20,6 +20,22 @@
                                 <small class="text-danger">Error: {{ $errors->first('name') }}</small>
                                 @endif
                             </div>
+                            <div class="form-group mb-3">
+                                <label for="name" class="form-label">Age</label>
+                                <input type="text" placeholder="Age" id="Age" class="form-control rounded-pill"
+                                    name="Age" required autofocus>
+                                @if ($errors->has('Age'))
+                                <small class="text-danger">Error: {{ $errors->first('Age') }}</small>
+                                @endif
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="name" class="form-label">facebook</label>
+                                <input type="url" placeholder="Enter your full facebook" id="namefacebook"
+                                    class="form-control rounded-pill" name="facebook" required autofocus>
+                                @if ($errors->has('facebook'))
+                                <small class="text-danger">Error: {{ $errors->first('facebook') }}</small>
+                                @endif
+                            </div>
 
                             <div class="form-group mb-3">
                                 <label for="email_address" class="form-label">Email Address</label>
