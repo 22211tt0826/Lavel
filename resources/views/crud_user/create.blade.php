@@ -2,38 +2,46 @@
 
 @section('content')
 <main class="signup-form">
-    <div class="cotainer">
+    <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-4">
-                <div class="card">
-                    <h3 class="card-header text-center">Create User</h3>
+            <div class="col-md-5">
+                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                    <div class="card-header bg-secondary text-white text-center py-3">
+                        <h3 class="mb-0">Register New Account</h3>
+                    </div>
                     <div class="card-body">
                         <form action="{{ route('user.postUser') }}" method="POST">
                             @csrf
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Name" id="name" class="form-control" name="name"
-                                    required autofocus>
+                                <label for="name" class="form-label">Full Name</label>
+                                <input type="text" placeholder="Enter your full name" id="name"
+                                    class="form-control rounded-pill" name="name" required autofocus>
                                 @if ($errors->has('name'))
-                                <span class="text-danger">{{ $errors->first('name') }}</span>
+                                <small class="text-danger">Error: {{ $errors->first('name') }}</small>
                                 @endif
                             </div>
 
                             <div class="form-group mb-3">
-                                <input type="text" placeholder="Email" id="email_address" class="form-control"
-                                    name="email" required autofocus>
+                                <label for="email_address" class="form-label">Email Address</label>
+                                <input type="email" placeholder="Enter your email address" id="email_address"
+                                    class="form-control rounded-pill" name="email" required autofocus>
                                 @if ($errors->has('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                                <small class="text-danger">Error: {{ $errors->first('email') }}</small>
                                 @endif
                             </div>
+
                             <div class="form-group mb-3">
-                                <input type="password" placeholder="Password" id="password" class="form-control"
-                                    name="password" required>
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" placeholder="Enter your password" id="password"
+                                    class="form-control rounded-pill" name="password" required>
                                 @if ($errors->has('password'))
-                                <span class="text-danger">{{ $errors->first('password') }}</span>
+                                <small class="text-danger">Error: {{ $errors->first('password') }}</small>
                                 @endif
                             </div>
+
                             <div class="d-grid mx-auto">
-                                <button type="submit" class="btn btn-dark btn-block">Submit</button>
+                                <button type="submit" class="btn btn-secondary btn-lg rounded-pill">Complete
+                                    Registration</button>
                             </div>
                         </form>
                     </div>
