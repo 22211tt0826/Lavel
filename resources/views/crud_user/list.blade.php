@@ -16,6 +16,7 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Name</th>
+                                    <th>image</th>
                                     <th>Age</th>
                                     <th>Facebook</th>
                                     <th>Email</th>
@@ -27,6 +28,7 @@
                                 <tr>
                                     <td>{{ $user->id }}</td>
                                     <td>{{ $user->name }}</td>
+                                    <td>{{ $user->image }}</td>
                                     <td>{{ $user->Age }}</td>
                                     <td>{{ $user->facebook }}</td>
                                     <td>{{ $user->email }}</td>

@@ -21,6 +21,14 @@
                                 @endif
                             </div>
                             <div class="form-group mb-3">
+                                <label for="image" class="form-label">Profile Image</label>
+                                <input type="file" id="image" class="form-control rounded-pill" name="image" required
+                                    autofocus>
+                                @if ($errors->has('image'))
+                                <small class="text-danger">Error: {{ $errors->first('image') }}</small>
+                                @endif
+                            </div>
+                            <div class="form-group mb-3">
                                 <label for="name" class="form-label">Age</label>
                                 <input type="text" placeholder="Age" id="Age" class="form-control rounded-pill"
                                     name="Age" required autofocus>
