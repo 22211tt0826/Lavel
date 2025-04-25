@@ -22,8 +22,8 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="image" class="form-label">Profile Image</label>
-                                <input type="file" id="image" class="form-control rounded-pill" name="image" required
-                                    autofocus>
+                                <input type="file" accept="image/*" id="image" class="form-control rounded-pill"
+                                    name="image" required autofocus>
                                 @if ($errors->has('image'))
                                 <small class="text-danger">Error: {{ $errors->first('image') }}</small>
                                 @endif

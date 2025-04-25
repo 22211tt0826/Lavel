@@ -20,6 +20,7 @@
                                     <th>Age</th>
                                     <th>Facebook</th>
                                     <th>Email</th>
+                                    <th>order</th>
                                     <th class="text-center">Action</th>
                                 </tr>
                             </thead>
@@ -32,6 +33,15 @@
                                     <td>{{ $user->Age }}</td>
                                     <td>{{ $user->facebook }}</td>
                                     <td>{{ $user->email }}</td>
+                                    <td>
+                                        @foreach($orders as $order)
+                                        @if($order->user_id ==$user->id)
+                                        <a href="{{ route('order.detail', ['order_id' => $order->id]) }}">{{ $order->id }}</a>
+                                        <br>
+                                        @endif
+                                        @endforeach
+
+                                    </td>
                                     <td class="text-center">
                                         <a href="{{ route('user.readUser', ['id' => $user->id]) }}"
                                             class="btn btn-info btn-sm">

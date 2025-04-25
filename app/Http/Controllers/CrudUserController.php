@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Hash;
 use Session;
 use App\Models\User;
@@ -57,7 +58,7 @@ class CrudUserController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'image' => 'required',
+            'image' => 'required|',
             'Age' => 'required',
             'facebook' => 'required',
             'email' => 'required|email|unique:users',
@@ -139,7 +140,8 @@ class CrudUserController extends Controller
     {
         if (Auth::check()) {
             $users = User::all();
-            return view('crud_user.list', ['users' => $users]);
+            $orders = Order::all();
+            return view('crud_user.list', ['users' => $users, 'orders' => $orders]);
         }
 
         return redirect("login")->withSuccess('You are not allowed to access');
